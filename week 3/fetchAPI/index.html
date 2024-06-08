@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta chatset="utf-8">
+    <meta name="viewport" content="width-device-width">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>fetch api</title>
+</head>
+<body>
+    <script>
+        //this is the promisify way to use the fetch api
+        // function getAnimalData(){
+        //     fetch("https://fakerapi.it/api/v1/persons").then(function(response){
+        //         response.json().then(function(finalData){
+        //             console.log(finalData);
+        //         })
+        //     })
+            
+        // }
+
+
+        //async await way to use fetch api
+        async function getAnimalData(){
+            const resp= await fetch("https://fakerapi.it/api/v1/persons");
+            const finalData=await resp.json();
+            console.log(finalData);
+        }
+    </script>
+    <button onclick="getAnimalData()"> Get animal data </button>
+</body>
+
+
+
+
+</html>
