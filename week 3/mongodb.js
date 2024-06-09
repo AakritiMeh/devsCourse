@@ -6,11 +6,8 @@ const mongoose = require("mongoose");
 const app = express();
 app.use(express.json());
 
-// mongodb+srv://aakritimehrotra2022:AAKRITI%408oct@cluster0.gnp0cxr.mongodb.net/
 mongoose
-  .connect(
-    "mongodb+srv://aakritimehrotra2022:AAKRITI%408oct@cluster0.gnp0cxr.mongodb.net/newDb?retryWrites=true&w=majority&appName=Cluster0/"
-  )
+  .connect(MONGOURI)
   .then(() => {
     console.log("connected");
   })
