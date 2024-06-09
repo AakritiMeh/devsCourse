@@ -40,9 +40,3 @@ user
   .catch((err) => {
     console.log("not saved");
   });
-
-//  uname- aakritimehrotra2022  passwd - AAKRITI@8oct
-
-//mongodb+srv:aakritimehrotra2022:AAKRITI@8oct@cluster0.qmt1szv.mongodb.net/
-
-// mongodb+srv://aakritimehrotra2022:AAKRITI%408oct@cluster0.gnp0cxr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/
