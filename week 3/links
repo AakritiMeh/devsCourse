@@ -5,3 +5,10 @@ postgresql://learn_owner:qpQiwZBC96nY@ep-old-voice-a1q8t0gx.ap-southeast-1.aws.n
 mongoDB
 aakritimehrotra2022
 AAKRITI@8oct
+
+original   mongodb+srv://aakritimehrotra2022:AAKRITI%408oct@cluster0.gnp0cxr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/
+
+//  uname- aakritimehrotra2022  passwd - AAKRITI@8oct
+new    mongodb+srv:aakritimehrotra2022:AAKRITI@8oct@cluster0.qmt1szv.mongodb.net/
+
+
