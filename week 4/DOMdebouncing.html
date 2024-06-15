@@ -1,0 +1,32 @@
+
+
+<!DOCTYPE html>
+<html>
+    <script>
+        let timeout;
+        function debounce(){
+            clearTimeout(timeout);
+            timeout=setTimeout(()=>{
+                calSum()
+            },1000);
+        }
+        async function calSum(){
+            const a=document.getElementById("firstNo").value;
+            const b=document.getElementById("SecondNo").value;
+            const resp=await fetch("https://sum-server.100xdevs.com/sum?a=" + a+ "&b="+ b);
+            
+            document.getElementById("finalAns").innerHTML=await resp.text();
+
+         
+            
+        }
+
+    </script>
+
+    <body>
+        <input type="text" placeholder="firstno" id="firstNo" oninput="debounce()"></input><br />
+        <input type="text" placeholder="secno" id="SecondNo" oninput="debounce()"></input><br />
+        
+        <div id="finalAns"></div>
+    </body>
+</html>

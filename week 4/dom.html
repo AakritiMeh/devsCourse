@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        async function calSum(){
+            const a=document.getElementById("firstNo").value;
+            const b=document.getElementById("SecondNo").value;
+            const resp=await fetch("https://sum-server.100xdevs.com/sum?a=" + a+ "&b="+ b);
+            //const ans=await resp.text();
+            document.getElementById("finalAns").innerHTML=await resp.text();
+            // .then(function(res){
+            //     res.text()
+            //     .then(function(ans){
+            //         document.getElementById("finalAns").innerHTML=ans;
+            //     })
+            // })
+         
+            
+        }
+
+    </script>
+
+    <body>
+        <input type="text" placeholder="firstno" id="firstNo"></input><br />
+        <input type="text" placeholder="secno" id="SecondNo"></input><br />
+        <button onclick="calSum()"> calculate sum </button><br />
+        <div id="finalAns"></div>
+    </body>
+</html>
