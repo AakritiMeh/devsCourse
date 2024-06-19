@@ -2,7 +2,7 @@
   "name": "week-3",
   "version": "1.0.0",
   "description": "",
-  "main": "assignmentQues.js",
+  "main": "assignments/AuthWithoutjwt",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
