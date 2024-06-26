@@ -4,7 +4,12 @@ const { createToDo, updateToDo } = require("./types");
 const app = express();
 const { Todo } = require("./db");
 app.use(express.json());
-
+const cors = require("cors");
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
 app.post("/todo", async function (req, res) {
   const createPayLoad = req.body;
   const parsedpayLoad = createToDo.safeParse(createPayLoad);

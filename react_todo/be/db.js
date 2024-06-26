@@ -2,9 +2,7 @@ const mongoose = require("mongoose");
 const { boolean } = require("zod");
 
 mongoose
-  .connect(
-    "mongodb+srv://aakritimehrotra2022:AAKRITI%408oct@cluster0.gnp0cxr.mongodb.net/newDb?retryWrites=true&w=majority&appName=Cluster0/"
-  )
+  .connect(MONGOURI)
   .then(() => {
     console.log("connected");
   })
