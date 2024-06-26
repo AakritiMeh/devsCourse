@@ -2,7 +2,9 @@ const mongoose = require("mongoose");
 const { boolean } = require("zod");
 
 mongoose
-  .connect(MONGOURI)
+  .connect(
+    "mongodb+srv://aakritimehrotra2022:AAKRITI%408oct@cluster0.gnp0cxr.mongodb.net/newDb?retryWrites=true&w=majority&appName=Cluster0/"
+  )
   .then(() => {
     console.log("connected");
   })
@@ -10,15 +12,15 @@ mongoose
     console.log(err);
   });
 
-const Task = new mongoose.Schema(
+const todoSchema = new mongoose.Schema(
   {
     title: String,
     description: String,
-    completed: boolean,
+    completed: Boolean,
   },
   { collection: "todos" }
 );
-
+const Todo = mongoose.model("Todo", todoSchema);
 module.exports = {
-  Task,
+  Todo,
 };

@@ -1,20 +1,20 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
-const { createTodo, updateToDo } = require("./types");
+const { createToDo, updateToDo } = require("./types");
 const app = express();
-const { Task } = require("./db");
+const { Todo } = require("./db");
 app.use(express.json());
 
 app.post("/todo", async function (req, res) {
   const createPayLoad = req.body;
-  const parsedpayLoad = createTodo.safeParse(createPayLoad);
+  const parsedpayLoad = createToDo.safeParse(createPayLoad);
   if (!parsedpayLoad.success) {
     res.status(411).json({
       msg: "you sent wrong inputs",
     });
     return;
   }
-  const taskCreated = await Task.create({
+  const taskCreated = await Todo.create({
     title: createPayLoad.title,
     description: createPayLoad.description,
     completed: false,
@@ -27,7 +27,7 @@ app.post("/todo", async function (req, res) {
 });
 
 app.get("/todos", async function (req, res) {
-  const todos = await todo.find({});
+  const todos = await Todo.find({});
   res.json({
     todos,
   });
@@ -42,9 +42,9 @@ app.put("/completed", async function (req, res) {
     });
     return;
   }
-  await Task.update(
+  await Todo.updateOne(
     {
-      _id: req.body._id,
+      _id: req.body.id,
     },
     {
       completed: true,
@@ -54,3 +54,5 @@ app.put("/completed", async function (req, res) {
     msg: "marked as done",
   });
 });
+
+app.listen(3000);
