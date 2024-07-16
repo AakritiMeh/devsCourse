@@ -1,13 +1,13 @@
 
 import './App.css'
-import UseEffectDependencyArray from './UseEffectDependencyArray'
 
+import UseMemo from './UseMemo'
 function App() {
 
   return (
     <>
 
-      <UseEffectDependencyArray />
+      <UseMemo />
     </>
   )
 }
